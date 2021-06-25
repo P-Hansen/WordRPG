@@ -2,8 +2,8 @@ import "./Battle.scss";
 
 function Battle() {
     return (
-        <div>
-            test
+        <div className="background">
+            <img alt="paper" src="paper.jpg" />
         </div>
     )
 }
