@@ -4,7 +4,6 @@ import Battle from './components/Battle.jsx';
 function App() {
   return (
     <div>
-      <p>Hello world!</p>
       <Battle />
     </div>
   );
