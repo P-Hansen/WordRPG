@@ -3,7 +3,7 @@ import "./Battle.scss";
 function Battle() {
 
     let Mage = {
-        image: "/Lanto47.png",
+        image: "Lanto47.png",
         hp: 100,
         armor: 2,
         dodge: 10,
@@ -13,6 +13,16 @@ function Battle() {
     }
 
     let Enemy1 = {
+        image: "oviraptor.png",
+        hp: 100,
+        armor: 2,
+        dodge: 10,
+        speed: 5,
+        resistance: 5,
+        attacks: ["spell 1", "spell 2", "spell 3"],
+    }
+
+    let Enemy2 = {
         image: "oviraptor.png",
         hp: 100,
         armor: 2,
@@ -49,6 +59,11 @@ function Battle() {
                 zIndex: '1'
                 }} />
             <img className="enemy1" src={Enemy1.image} style={{
+                width: '250px',
+                height: '250px',
+                zIndex: '1'
+                }} />
+            <img className="enemy2" src={Enemy2.image} style={{
                 width: '250px',
                 height: '250px',
                 zIndex: '1'
