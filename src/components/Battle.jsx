@@ -12,6 +12,16 @@ function Battle() {
         attacks: ["spell 1", "spell 2", "spell 3"],
     }
 
+    let Enemy1 = {
+        image: "oviraptor.png",
+        hp: 100,
+        armor: 2,
+        dodge: 10,
+        speed: 5,
+        resistance: 5,
+        attacks: ["spell 1", "spell 2", "spell 3"],
+    }
+
     return (
         <>
         <div className="background" style={{
@@ -20,22 +30,27 @@ function Battle() {
             backgroundSize: '100% 100%',
             zIndex: '-10'
         }} >
-            <img className="characterImage1" width="1" height="1" style={{
-                width: '32px',
-                height: '32px',
+            <img className="characterImage1" style={{
+                width: '33px',
+                height: '33px',
                 background: `url(${Mage.image}) 0 -64px`,
                 zIndex: '1'
                 }} />
-            <img className="characterImage2" width="1" height="1" style={{
-                width: '32px',
-                height: '32px',
+            <img className="characterImage2" style={{
+                width: '33px',
+                height: '33px',
                 background: `url(${Mage.image}) 0 -64px`,
                 zIndex: '1'
                 }} />
-            <img className="characterImage3" width="1" height="1" style={{
-                width: '32px',
-                height: '32px',
+            <img className="characterImage3" style={{
+                width: '33px',
+                height: '33px',
                 background: `url(${Mage.image}) 0 -64px`,
+                zIndex: '1'
+                }} />
+            <img className="enemy1" src={Enemy1.image} style={{
+                width: '250px',
+                height: '250px',
                 zIndex: '1'
                 }} />
             <div className="menuBox">
