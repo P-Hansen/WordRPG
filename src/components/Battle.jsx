@@ -3,7 +3,7 @@ import "./Battle.scss";
 function Battle() {
 
     let Mage = {
-        image: "/$Lanto (47).png",
+        image: "/Lanto47.png",
         hp: 100,
         armor: 2,
         dodge: 10,
@@ -20,9 +20,9 @@ function Battle() {
             backgroundSize: '100% 100%',
             zIndex: '-10'
         }} >
-            <img className="characterImage" style={{
+            <img className="characterImage" width="1" height="1" style={{
                 width: '32px',
-                height: '42px',
+                height: '32px',
                 background: `url(${Mage.image}) 0 0`,
                 zIndex: '1'
                 }} />
