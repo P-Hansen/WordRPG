@@ -20,10 +20,22 @@ function Battle() {
             backgroundSize: '100% 100%',
             zIndex: '-10'
         }} >
-            <img className="characterImage" width="1" height="1" style={{
+            <img className="characterImage1" width="1" height="1" style={{
                 width: '32px',
                 height: '32px',
-                background: `url(${Mage.image}) 0 0`,
+                background: `url(${Mage.image}) 0 -64px`,
+                zIndex: '1'
+                }} />
+            <img className="characterImage2" width="1" height="1" style={{
+                width: '32px',
+                height: '32px',
+                background: `url(${Mage.image}) 0 -64px`,
+                zIndex: '1'
+                }} />
+            <img className="characterImage3" width="1" height="1" style={{
+                width: '32px',
+                height: '32px',
+                background: `url(${Mage.image}) 0 -64px`,
                 zIndex: '1'
                 }} />
             <div className="menuBox">
