@@ -1,4 +1,5 @@
 
+// Sprite component that handles the image inside the sprite reference sheet
 const Sprite = ({ image, data }) => {
   const { y, x, h, w } = data;
 
