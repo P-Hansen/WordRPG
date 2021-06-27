@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Battle.scss";
 
 function Battle() {
 
     let [state, setState] = useState("SELECTACTION");
+    let [selection, setSelection] = useState(0);
 
     let Mage1 = {
         image: "Lanto47.png",
@@ -55,6 +56,29 @@ function Battle() {
         attacks: ["spell 1", "spell 2", "spell 3"],
     }
 
+
+    window.addEventListener("keyup", (key)=>{
+        console.log(key.key);
+        if (key.key === 's') {
+            console.log("hello", selection);
+            selection = selection + 1;
+        }
+    });
+
+    function attacksMenu() {
+        return (
+        <>
+        {Mage1.attacks.map((attack, index)=>{
+            if (index === selection) {
+                return <>➤{attack}<br/></>
+            } else {
+                return <>{attack}<br/></>
+            }
+            })}
+        </>
+        )
+    }
+
     return (
         <>
         <div className="background" style={{
@@ -92,15 +116,13 @@ function Battle() {
                 zIndex: '1'
                 }} />
             <div className="menuBox">
-            {state === "SELECTACTION" && (
-                Mage1.attacks.map((attack)=>{
-                    return <>{attack}<br/></>
-                })
-            )}
-            {state === "SELECTTARGET" && (
-                <>
-                
-                </>
+                {state === "SELECTACTION" && (
+                    attacksMenu()
+                )}
+                {state === "SELECTTARGET" && (
+                    <>
+                    
+                    </>
                 )}
             </div>
         </div>
