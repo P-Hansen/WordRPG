@@ -93,10 +93,13 @@ function Battle() {
                 }} />
             <div className="menuBox">
             {state === "SELECTACTION" && (
+                Mage1.attacks.map((attack)=>{
+                    return <>{attack}<br/></>
+                })
+            )}
+            {state === "SELECTTARGET" && (
                 <>
-                {Mage1.attacks[0]}<br/>
-                {Mage1.attacks[1]}<br/>
-                {Mage1.attacks[2]}
+                
                 </>
                 )}
             </div>
