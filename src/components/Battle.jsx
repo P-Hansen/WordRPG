@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "./Battle.scss";
 
 function Battle() {
+
+    let [state, setState] = useState("SELECTACTION");
 
     let Mage1 = {
         image: "Lanto47.png",
@@ -89,9 +92,13 @@ function Battle() {
                 zIndex: '1'
                 }} />
             <div className="menuBox">
+            {state === "SELECTACTION" && (
+                <>
                 {Mage1.attacks[0]}<br/>
                 {Mage1.attacks[1]}<br/>
                 {Mage1.attacks[2]}
+                </>
+                )}
             </div>
         </div>
         </>
