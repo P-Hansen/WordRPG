@@ -61,12 +61,15 @@ function Battle() {
         key.preventDefault();
         console.log(key.key);
         if (key.key === 's') {
+            setSelection(selection += 1);
             console.log("list selection:", selection);
-            selection = selection + 1;
+            // window.location.reload(false);
         }
         if (key.key === 'w') {
+            // selection = selection - 1;
+            setSelection(selection -= 1);
             console.log("list selection:", selection);
-            selection = selection - 1;
+            // window.location.reload(false);
         }
     });
 
