@@ -21,7 +21,7 @@ const Player = ({ skin }) => {
   });
   
   return (
-    <Actor sprite={`/sprites/skins/${skin}.png`} data={data}/>
+    <Actor sprite={`/sprites/skins/${skin}.png`} data={data} dir={dir} step={step} />
   )
 };
 

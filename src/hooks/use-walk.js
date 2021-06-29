@@ -13,8 +13,7 @@ const useWalk = (maxSteps) => {
   };
 
   function walk(dir) {
-    console.dir(dir);
-    setDir(dir)
+    setDir(directions[dir])
     setStep(prev => prev < maxSteps -1? prev + 1 : 0)
   };
 
