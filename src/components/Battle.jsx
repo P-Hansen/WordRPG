@@ -58,10 +58,15 @@ function Battle() {
 
 
     window.addEventListener("keyup", (key)=>{
+        key.preventDefault();
         console.log(key.key);
         if (key.key === 's') {
-            console.log("hello", selection);
+            console.log("list selection:", selection);
             selection = selection + 1;
+        }
+        if (key.key === 'w') {
+            console.log("list selection:", selection);
+            selection = selection - 1;
         }
     });
 
