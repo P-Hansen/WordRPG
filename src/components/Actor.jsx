@@ -1,15 +1,17 @@
 import Sprite from "./Sprite";
 
 // Actor is component responsible for positioning, movements and animation of the character sprite
-const Actor = () => {
+const Actor = ({sprite, data, step = 0, dir = 0}) => {
+  const { h, w } = data;
+
   return(
     <Sprite 
-    image={"/sprites/skins/m1.png"} 
+    image={sprite} 
     data={{
-      x: 0,
-      y: 0,
-      w: 32,
-      h: 32,
+      x: step * w,
+      y: dir * h,
+      w,
+      h,
     }}
   />
   )
