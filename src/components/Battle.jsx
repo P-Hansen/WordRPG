@@ -56,20 +56,17 @@ function Battle() {
         attacks: ["spell 1", "spell 2", "spell 3"],
     }
 
-
+    //this should just take the input and update state but it starts an input cascade
     window.addEventListener("keyup", (key)=>{
         key.preventDefault();
         console.log(key.key);
         if (key.key === 's') {
-            setSelection(selection += 1);
+            setSelection(selection + 1);
             console.log("list selection:", selection);
-            // window.location.reload(false);
         }
         if (key.key === 'w') {
-            // selection = selection - 1;
-            setSelection(selection -= 1);
+            setSelection(selection - 1);
             console.log("list selection:", selection);
-            // window.location.reload(false);
         }
     });
 
