@@ -1,10 +1,11 @@
 import './App.scss';
+import { useState } from "react";
 import Battle from './components/Battle.jsx';
 import Player from "./components/Player";
 
 function App() {
 
-  let [state, setState] = useState("WORLD");
+  let [state, setState] = useState("BATTLE");
 
   return (
     <>

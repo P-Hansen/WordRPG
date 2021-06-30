@@ -16,9 +16,10 @@ const Player = ({ skin }) => {
   useKeyPress((event) => {
     event.preventDefault();
     const dir = event.key.replace("Arrow", "").toLowerCase();
-    console.log("dir in useKeyPress", dir);
-    if (dir === "down" || "left" || "right" || "up") {
+    // console.log("dir in useKeyPress", dir);
+    if (dir === "down" || dir === "left" || dir === "right" || dir === "up") {
       walk(dir);
+      // console.log("inside if: ", dir);
     }
   });
   
