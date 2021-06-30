@@ -14,7 +14,7 @@ function Battle() {
         dodge: 10,
         speed: 5,
         resistance: 5,
-        attacks: ["spell 1", "spell 2", "spell 3"],
+        attacks: [{name:"spell 1", description: "description here", dmg: 100}, {name:"spell 2", description: "description here", dmg: 200}, {name:"spell 3", description: "description here", dmg: 50}],
     }
 
     let Mage2 = {
@@ -103,9 +103,9 @@ function Battle() {
         <>
         {Mage1.attacks.map((attack, index)=>{
             if (index === selection) {
-                return <>➤{attack}<br/></>
+                return <>➤{attack.name} {attack.description} {attack.dmg} Damage<br/></>
             } else {
-                return <>{attack}<br/></>
+                return <>{attack.name} {attack.description} {attack.dmg} Damage<br/></>
             }
             })}
         </>
