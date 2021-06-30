@@ -37,7 +37,19 @@ function Battle() {
         attacks: ["spell 1", "spell 2", "spell 3"],
     }
 
-    let Enemy1 = {
+    let enemyArray = [
+    {
+        name: "Oviraptor",
+        image: "oviraptor.png",
+        hp: 100,
+        armor: 2,
+        dodge: 10,
+        speed: 5,
+        resistance: 5,
+        attacks: ["spell 1", "spell 2", "spell 3"],
+    },
+    {
+        name: "Oviraptor",
         image: "oviraptor.png",
         hp: 100,
         armor: 2,
@@ -46,30 +58,7 @@ function Battle() {
         resistance: 5,
         attacks: ["spell 1", "spell 2", "spell 3"],
     }
-
-    let Enemy2 = {
-        image: "oviraptor.png",
-        hp: 100,
-        armor: 2,
-        dodge: 10,
-        speed: 5,
-        resistance: 5,
-        attacks: ["spell 1", "spell 2", "spell 3"],
-    }
-
-    //this should just take the input and update state but it starts an input cascade
-    // window.addEventListener("keyup", (key)=>{
-    //     key.preventDefault();
-    //     console.log(key.key);
-    //     if (key.key === 's') {
-    //         setSelection(selection + 1);
-    //         console.log("list selection:", selection);
-    //     }
-    //     if (key.key === 'w') {
-    //         setSelection(selection - 1);
-    //         console.log("list selection:", selection);
-    //     }
-    // });
+    ]
 
     useKeyPress((event) => {
         event.preventDefault();
@@ -78,16 +67,17 @@ function Battle() {
             if (dir === 'down') {
                 setSelection((selection + 1) > Mage1.attacks.length-1 ? Mage1.attacks.length-1 : selection + 1);
                 console.log("list selection:", selection);
-            }
+            };
             if (dir === 'up') {
                 setSelection((selection - 1) < 0 ? 0 : selection - 1);
                 console.log("list selection:", selection);
-            }
+            };
             if (dir === 'enter') {
+                setSelection(0);
                 setState("SELECTTARGET");
-            }
+            };
         }
-      });
+    });
 
     function attacksMenu() {
         return (
@@ -101,7 +91,7 @@ function Battle() {
             })}
         </>
         )
-    }
+    };
 
     return (
         <>
@@ -129,12 +119,12 @@ function Battle() {
                 background: `url(${Mage3.image}) 0 -64px`,
                 zIndex: '1'
                 }} />
-            <img className="enemy1" src={Enemy1.image} style={{
+            <img className="enemy1" src={enemyArray[0].image} style={{
                 width: '250px',
                 height: '250px',
                 zIndex: '1'
                 }} />
-            <img className="enemy2" src={Enemy2.image} style={{
+            <img className="enemy2" src={enemyArray[1].image} style={{
                 width: '250px',
                 height: '250px',
                 zIndex: '1'
@@ -145,7 +135,12 @@ function Battle() {
                 )}
                 {state === "SELECTTARGET" && (
                     <>
-                    
+                        Name: {enemyArray[selection].name}<br/>
+                        Hp: {enemyArray[selection].hp}<br/>
+                        Armor: {enemyArray[selection].armor}<br/>
+                        Dodge: {enemyArray[selection].dodge}<br/>
+                        Speed: {enemyArray[selection].speed}<br/>
+                        Resistance: {enemyArray[selection].resistance}
                     </>
                 )}
             </div>
