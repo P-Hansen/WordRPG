@@ -51,11 +51,11 @@ function Battle() {
     {
         name: "Oviraptor",
         image: "oviraptor.png",
-        hp: 100,
-        armor: 2,
-        dodge: 10,
-        speed: 5,
-        resistance: 5,
+        hp: 50,
+        armor: 5,
+        dodge: 15,
+        speed: 6,
+        resistance: 3,
         attacks: ["spell 1", "spell 2", "spell 3"],
     }
     ]
@@ -63,19 +63,38 @@ function Battle() {
     useKeyPress((event) => {
         event.preventDefault();
         const dir = event.key.replace("Arrow", "").toLowerCase();
-        if (dir === "down" || dir === "up" || dir === "enter") {
-            if (dir === 'down') {
-                setSelection((selection + 1) > Mage1.attacks.length-1 ? Mage1.attacks.length-1 : selection + 1);
-                console.log("list selection:", selection);
-            };
-            if (dir === 'up') {
-                setSelection((selection - 1) < 0 ? 0 : selection - 1);
-                console.log("list selection:", selection);
-            };
-            if (dir === 'enter') {
-                setSelection(0);
-                setState("SELECTTARGET");
-            };
+        //controls for selecting action
+        if (state === "SELECTACTION") {
+            if (dir === "down" || dir === "up" || dir === "enter") {
+                if (dir === 'down') {
+                    setSelection((selection + 1) > Mage1.attacks.length-1 ? Mage1.attacks.length-1 : selection + 1);
+                    console.log("list selection:", selection);
+                };
+                if (dir === 'up') {
+                    setSelection((selection - 1) < 0 ? 0 : selection - 1);
+                    console.log("list selection:", selection);
+                };
+                if (dir === 'enter') {
+                    setSelection(0);
+                    setState("SELECTTARGET");
+                };
+            }
+        //controls for selecting target
+        } else if (state === "SELECTTARGET") {
+            if (dir === "down" || dir === "up" || dir === "enter") {
+                if (dir === 'down') {
+                    setSelection((selection + 1) > enemyArray.length-1 ? enemyArray.length-1 : selection + 1);
+                    console.log("list selection:", selection);
+                };
+                if (dir === 'up') {
+                    setSelection((selection - 1) < 0 ? 0 : selection - 1);
+                    console.log("list selection:", selection);
+                };
+                if (dir === 'enter') {
+                    setSelection(0);
+                    setState("ACTION");
+                };
+            }
         }
     });
 
