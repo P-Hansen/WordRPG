@@ -19,19 +19,31 @@ const useWalk = (maxSteps) => {
     down: { x: 0, y: stepSize },
     left: { x: -stepSize, y: 0},
     right: { x: stepSize, y:0 },
-    up: { x:0, y: -stepSize },
+    up: { x: 0, y: -stepSize },
+  };
+
+  function move(dir) {
+    setPosition(prev => ({
+      x: prev.x + modifier[dir].x,
+      y: prev.y + modifier[dir].y,
+    }))
   };
 
   function walk(dir) {
-    setDir(directions[dir])
-    setStep(prev => prev < maxSteps -1? prev + 1 : 0)
+    setDir(prev => {
+      if(directions[dir] === prev) {
+        move(dir)
+      }
+      return directions[dir];
+    });
+    setStep(prev => prev < maxSteps -1? prev + 1 : 0);
   };
 
   return {
     walk,
     dir,
     step,
-    directions,
+    position,
   }
 
 };

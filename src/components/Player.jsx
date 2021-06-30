@@ -5,7 +5,7 @@ import useWalk from "../hooks/use-walk";
 // this is the component that listens for player input
 const Player = ({ skin }) => {
   // useWalk(maxSteps) is 3 because we only have 3 frames of animation
-  const { dir, step, walk } = useWalk(3);
+  const { dir, step, position, walk } = useWalk(3);
 
   const data = {
     h: 32,
