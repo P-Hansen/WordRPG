@@ -6,10 +6,10 @@ const useKeyPress = (callBack) => {
 
   useEffect(() => {
     window.addEventListener("keydown", callBack);
-    return () => window.removeEventListener("keydown", callBack)
+    return () => window.removeEventListener("keydown", callBack);
   }, [callBack]);
 
 };
 
 
-export default useKeyPress
+export default useKeyPress;
