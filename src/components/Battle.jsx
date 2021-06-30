@@ -74,14 +74,17 @@ function Battle() {
     useKeyPress((event) => {
         event.preventDefault();
         const dir = event.key.replace("Arrow", "").toLowerCase();
-        if (dir === "down" || dir === "up") {
+        if (dir === "down" || dir === "up" || dir === "enter") {
             if (dir === 'down') {
-                setSelection(selection + 1);
+                setSelection((selection + 1) > Mage1.attacks.length-1 ? Mage1.attacks.length-1 : selection + 1);
                 console.log("list selection:", selection);
             }
             if (dir === 'up') {
-                setSelection(selection - 1);
+                setSelection((selection - 1) < 0 ? 0 : selection - 1);
                 console.log("list selection:", selection);
+            }
+            if (dir === 'enter') {
+                setState("SELECTTARGET");
             }
         }
       });
