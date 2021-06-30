@@ -6,6 +6,7 @@ function Battle() {
 
     let [state, setState] = useState("SELECTACTION");
     let [selection, setSelection] = useState(0);
+    let [attack, setAttack] = useState({});
 
     let Mage1 = {
         image: "Lanto47.png",
@@ -75,6 +76,8 @@ function Battle() {
                     console.log("list selection:", selection);
                 };
                 if (dir === 'enter') {
+                    //save attack for late once target is selected
+                    setAttack(Mage1.attacks[selection]);
                     setSelection(0);
                     setState("SELECTTARGET");
                 };
@@ -91,8 +94,10 @@ function Battle() {
                     console.log("list selection:", selection);
                 };
                 if (dir === 'enter') {
+                    //deal dmg
+                    enemyArray[selection].hp -= attack.dmg;
                     setSelection(0);
-                    setState("ACTION");
+                    setState("SELECTACTION");
                 };
             }
         }
@@ -159,14 +164,15 @@ function Battle() {
                     attacksMenu()
                 )}
                 {state === "SELECTTARGET" && (
-                    <>
+                    <div>
+                        {/* <h4>Select Target</h4> */}
                         Name: {enemyArray[selection].name}<br/>
                         Hp: {enemyArray[selection].hp}<br/>
                         Armor: {enemyArray[selection].armor}<br/>
                         Dodge: {enemyArray[selection].dodge}<br/>
                         Speed: {enemyArray[selection].speed}<br/>
                         Resistance: {enemyArray[selection].resistance}
-                    </>
+                    </div>
                 )}
             </div>
         </div>
