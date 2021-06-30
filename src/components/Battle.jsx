@@ -138,16 +138,22 @@ function Battle() {
                 background: `url(${Mage3.image}) 0 -64px`,
                 zIndex: '1'
                 }} />
-            <img className="enemy1" src={enemyArray[0].image} style={{
-                width: '250px',
-                height: '250px',
-                zIndex: '1'
-                }} />
-            <img className="enemy2" src={enemyArray[1].image} style={{
-                width: '250px',
-                height: '250px',
-                zIndex: '1'
-                }} />
+            <div className="enemy1" >
+                {selection === 0 && state === "SELECTTARGET" && (<div>➤</div>)}
+                <img  src={enemyArray[0].image} style={{
+                    width: '250px',
+                    height: '250px',
+                    zIndex: '1'
+                    }} />
+            </div>
+            <div className="enemy2" >
+                {selection === 1 && state === "SELECTTARGET" && (<div>➤</div>)}
+                <img  src={enemyArray[1].image} style={{
+                    width: '250px',
+                    height: '250px',
+                    zIndex: '1'
+                    }} />
+            </div>
             <div className="menuBox">
                 {state === "SELECTACTION" && (
                     attacksMenu()
