@@ -16,12 +16,20 @@ const Player = ({ skin }) => {
   useKeyPress((event) => {
     event.preventDefault();
     const dir = event.key.replace("Arrow", "").toLowerCase();
-
-    walk(dir);
+    console.log("dir in useKeyPress", dir);
+    if (dir === "down" || "left" || "right" || "up") {
+      walk(dir);
+    }
   });
   
   return (
-    <Actor sprite={`/sprites/skins/${skin}.png`} data={data} dir={dir} step={step} />
+    <Actor 
+      sprite={`/sprites/skins/${skin}.png`}
+      data={data} 
+      dir={dir} 
+      step={step}
+      position={position}
+    />
   )
 };
 
