@@ -148,20 +148,20 @@ function Battle() {
                 zIndex: '1'
                 }} />
             <div className="enemy1" >
-                {selection === 0 && state === "SELECTTARGET" && (<div>➤</div>)}
-                <img  src={enemyArray[0].image} style={{
+                {selection === 0 && state === "SELECTTARGET" && (enemies[0].hp > 0) && (<div>➤</div>)}
+                {(enemies[0].hp > 0) && <img src={enemies[0].image} style={{
                     width: '250px',
                     height: '250px',
                     zIndex: '1'
-                    }} />
+                    }} />}
             </div>
             <div className="enemy2" >
-                {selection === 1 && state === "SELECTTARGET" && (<div>➤</div>)}
-                <img  src={enemyArray[1].image} style={{
+                {selection === 1 && state === "SELECTTARGET" && (enemies[1].hp > 0) && (<div>➤</div>)}
+                {(enemies[1].hp > 0) && <img src={enemies[1].image} style={{
                     width: '250px',
                     height: '250px',
                     zIndex: '1'
-                    }} />
+                    }} />}
             </div>
             <div className="menuBox">
                 {state === "SELECTACTION" && (
