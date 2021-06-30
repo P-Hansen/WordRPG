@@ -61,6 +61,8 @@ function Battle() {
     }
     ]
 
+    let [enemies, setEnemies] = useState(enemyArray);
+
     useKeyPress((event) => {
         event.preventDefault();
         const dir = event.key.replace("Arrow", "").toLowerCase();
@@ -95,9 +97,11 @@ function Battle() {
                 };
                 if (dir === 'enter') {
                     //deal dmg
-                    enemyArray[selection].hp -= attack.dmg;
-                    setSelection(0);
+                    console.log("hp before", enemies[selection].hp);
+                    enemies[selection].hp -= attack.dmg;
+                    console.log("hp after", enemies[selection].hp);
                     setState("SELECTACTION");
+                    setSelection(0);
                 };
             }
         }
@@ -163,15 +167,15 @@ function Battle() {
                 {state === "SELECTACTION" && (
                     attacksMenu()
                 )}
-                {state === "SELECTTARGET" && (
+                {state === "SELECTTARGET" && enemies && (
                     <div>
                         {/* <h4>Select Target</h4> */}
-                        Name: {enemyArray[selection].name}<br/>
-                        Hp: {enemyArray[selection].hp}<br/>
-                        Armor: {enemyArray[selection].armor}<br/>
-                        Dodge: {enemyArray[selection].dodge}<br/>
-                        Speed: {enemyArray[selection].speed}<br/>
-                        Resistance: {enemyArray[selection].resistance}
+                        Name: {enemies[selection].name}<br/>
+                        Hp: {enemies[selection].hp}<br/>
+                        Armor: {enemies[selection].armor}<br/>
+                        Dodge: {enemies[selection].dodge}<br/>
+                        Speed: {enemies[selection].speed}<br/>
+                        Resistance: {enemies[selection].resistance}
                     </div>
                 )}
             </div>
