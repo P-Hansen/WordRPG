@@ -2,6 +2,7 @@ import { useState } from "react";
 
 // this hook is responsible for animating the chacter steps
 const useWalk = (maxSteps) => {
+  const [position, setPosition] = useState(0);
   const [dir, setDir] = useState(0);
   const [step, setStep] = useState(0);
 
@@ -10,6 +11,15 @@ const useWalk = (maxSteps) => {
     left: 1,
     right: 2,
     up: 3,
+  };
+
+  const stepSize = 16;
+
+  const modifier = {
+    down: { x: 0, y: stepSize },
+    left: { x: -stepSize, y: 0},
+    right: { x: stepSize, y:0 },
+    up: { x:0, y: -stepSize },
   };
 
   function walk(dir) {
