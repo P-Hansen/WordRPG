@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Battle.scss";
+import useKeyPress from "../hooks/use-key-press";
 
 function Battle() {
 
@@ -57,18 +58,33 @@ function Battle() {
     }
 
     //this should just take the input and update state but it starts an input cascade
-    window.addEventListener("keyup", (key)=>{
-        key.preventDefault();
-        console.log(key.key);
-        if (key.key === 's') {
-            setSelection(selection + 1);
-            console.log("list selection:", selection);
+    // window.addEventListener("keyup", (key)=>{
+    //     key.preventDefault();
+    //     console.log(key.key);
+    //     if (key.key === 's') {
+    //         setSelection(selection + 1);
+    //         console.log("list selection:", selection);
+    //     }
+    //     if (key.key === 'w') {
+    //         setSelection(selection - 1);
+    //         console.log("list selection:", selection);
+    //     }
+    // });
+
+    useKeyPress((event) => {
+        event.preventDefault();
+        const dir = event.key.replace("Arrow", "").toLowerCase();
+        if (dir === "down" || dir === "up") {
+            if (dir === 'down') {
+                setSelection(selection + 1);
+                console.log("list selection:", selection);
+            }
+            if (dir === 'up') {
+                setSelection(selection - 1);
+                console.log("list selection:", selection);
+            }
         }
-        if (key.key === 'w') {
-            setSelection(selection - 1);
-            console.log("list selection:", selection);
-        }
-    });
+      });
 
     function attacksMenu() {
         return (
