@@ -69,11 +69,9 @@ function Battle(props) {
                     //deal dmg
                     console.log("hp before", enemies[selection].hp);
                     enemies[selection].hp -= attack.dmg;
-                    if (enemies[selection].hp) {
-
-                    }
                     console.log("hp after", enemies[selection].hp);
                     setState("SELECTACTION");
+                    //switch to next player in the array
                     if ((activePlayer + 1) >= props.characters.length) {
                         setActivePlayer(0);
                     } else {
@@ -85,6 +83,7 @@ function Battle(props) {
         }
     });
 
+    //show a list of the active players attacks and an arrow in front of the currently selected one
     function attacksMenu() {
         return (
         <>
@@ -156,7 +155,6 @@ function Battle(props) {
                 )}
                 {state === "SELECTTARGET" && enemies && (
                     <div>
-                        {/* <h4>Select Target</h4> */}
                         Name: {enemies[selection].name}<br/>
                         Hp: {enemies[selection].hp}<br/>
                         Armor: {enemies[selection].armor}<br/>

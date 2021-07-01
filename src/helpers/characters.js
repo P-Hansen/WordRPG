@@ -1,3 +1,4 @@
+//array of player characters
 export default [
     {image: "Lanto47.png",
     hp: 100,
