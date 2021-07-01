@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Battle.scss";
 import useKeyPress from "../hooks/use-key-press";
+import enemyArray from "../helpers/enemies";
 
 function Battle(props) {
 
@@ -9,29 +10,6 @@ function Battle(props) {
     let [attack, setAttack] = useState({});
     let [activePlayer, setActivePlayer] = useState(0);
     let [letters, setLetters] = useState("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-
-    let enemyArray = [
-    {
-        name: "Oviraptor",
-        image: "oviraptor.png",
-        hp: 100,
-        armor: 2,
-        dodge: 10,
-        speed: 5,
-        resistance: 5,
-        attacks: ["spell 1", "spell 2", "spell 3"],
-    },
-    {
-        name: "Oviraptor",
-        image: "oviraptor.png",
-        hp: 50,
-        armor: 5,
-        dodge: 15,
-        speed: 6,
-        resistance: 3,
-        attacks: ["spell 1", "spell 2", "spell 3"],
-    }];
-
     let [enemies, setEnemies] = useState(enemyArray);
 
     useKeyPress((event) => {
