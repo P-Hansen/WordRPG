@@ -2,41 +2,11 @@ import { useEffect, useState } from "react";
 import "./Battle.scss";
 import useKeyPress from "../hooks/use-key-press";
 
-function Battle() {
+function Battle(props) {
 
     let [state, setState] = useState("SELECTACTION");
     let [selection, setSelection] = useState(0);
     let [attack, setAttack] = useState({});
-
-    let Mage1 = {
-        image: "Lanto47.png",
-        hp: 100,
-        armor: 2,
-        dodge: 10,
-        speed: 5,
-        resistance: 5,
-        attacks: [{name:"spell 1", description: "description here", dmg: 100}, {name:"spell 2", description: "description here", dmg: 200}, {name:"spell 3", description: "description here", dmg: 50}],
-    }
-
-    let Mage2 = {
-        image: "Lanto138.png",
-        hp: 100,
-        armor: 2,
-        dodge: 10,
-        speed: 5,
-        resistance: 5,
-        attacks: ["spell 1", "spell 2", "spell 3"],
-    }
-
-    let Mage3 = {
-        image: "Lanto113.png",
-        hp: 100,
-        armor: 2,
-        dodge: 10,
-        speed: 5,
-        resistance: 5,
-        attacks: ["spell 1", "spell 2", "spell 3"],
-    }
 
     let enemyArray = [
     {
@@ -70,7 +40,7 @@ function Battle() {
         if (state === "SELECTACTION") {
             if (dir === "down" || dir === "up" || dir === "enter") {
                 if (dir === 'down') {
-                    setSelection((selection + 1) > Mage1.attacks.length-1 ? Mage1.attacks.length-1 : selection + 1);
+                    setSelection((selection + 1) > props.characters[0].attacks.length-1 ? props.characters[0].attacks.length-1 : selection + 1);
                     console.log("list selection:", selection);
                 };
                 if (dir === 'up') {
@@ -79,7 +49,7 @@ function Battle() {
                 };
                 if (dir === 'enter') {
                     //save attack for late once target is selected
-                    setAttack(Mage1.attacks[selection]);
+                    setAttack(props.characters[0].attacks[selection]);
                     setSelection(0);
                     setState("SELECTTARGET");
                 };
@@ -99,6 +69,9 @@ function Battle() {
                     //deal dmg
                     console.log("hp before", enemies[selection].hp);
                     enemies[selection].hp -= attack.dmg;
+                    if (enemies[selection].hp) {
+
+                    }
                     console.log("hp after", enemies[selection].hp);
                     setState("SELECTACTION");
                     setSelection(0);
@@ -110,13 +83,13 @@ function Battle() {
     function attacksMenu() {
         return (
         <>
-        {Mage1.attacks.map((attack, index)=>{
+        {props.characters[0].attacks.map((attack, index)=>{
             if (index === selection) {
-                return <>➤{attack.name} {attack.description} {attack.dmg} Damage<br/></>
+                return <>➤ {attack.name} {attack.description} {attack.dmg} Damage<br/></>
             } else {
                 return <>{attack.name} {attack.description} {attack.dmg} Damage<br/></>
             }
-            })}
+        })}
         </>
         )
     };
@@ -132,19 +105,19 @@ function Battle() {
             <img className="characterImage1" style={{
                 width: '33px',
                 height: '33px',
-                background: `url(${Mage1.image}) 0 -64px`,
+                background: `url(${props.characters[0].image}) 0 -64px`,
                 zIndex: '1'
                 }} />
             <img className="characterImage2" style={{
                 width: '33px',
                 height: '33px',
-                background: `url(${Mage2.image}) 0 -64px`,
+                background: `url(${props.characters[1].image}) 0 -64px`,
                 zIndex: '1'
                 }} />
             <img className="characterImage3" style={{
                 width: '33px',
                 height: '33px',
-                background: `url(${Mage3.image}) 0 -64px`,
+                background: `url(${props.characters[2].image}) 0 -64px`,
                 zIndex: '1'
                 }} />
             <div className="enemy1" >
