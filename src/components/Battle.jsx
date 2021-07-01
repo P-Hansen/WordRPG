@@ -87,6 +87,7 @@ function Battle(props) {
     function attacksMenu() {
         return (
         <>
+        {props.characters[activePlayer].name}<br/><br/>
         {props.characters[activePlayer].attacks.map((attack, index)=>{
             if (index === selection) {
                 return <>➤ {attack.name} {attack.description} {attack.dmg} Damage<br/></>

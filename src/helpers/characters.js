@@ -1,39 +1,43 @@
 //array of player characters
 export default [
     {image: "Lanto47.png",
+    name: "Alpha Mage",
     hp: 100,
     armor: 2,
     dodge: 10,
     speed: 5,
     resistance: 5,
     attacks: [
-      {name:"spell 1", description: "description here", dmg: 100},
-      {name:"spell 2", description: "description here", dmg: 200},
-      {name:"spell 3", description: "description here", dmg: 50}
+        {name:"HIT", description: "description here", dmg: 50},
+        {name:"CUT", description: "description here", dmg: 50},
+        {name:"STAB", description: "description here", dmg: 100},
+        {name:"SLASH", description: "description here", dmg: 200}
     ]
     },
     {image: "Lanto138.png",
+    name: "Pyromaniac",
     hp: 100,
     armor: 2,
     dodge: 10,
     speed: 5,
     resistance: 5,
     attacks: [
-        {name:"spell 4", description: "description here", dmg: 100},
-        {name:"spell 5", description: "description here", dmg: 200},
-        {name:"spell 6", description: "description here", dmg: 50}
+        {name:"BURN", description: "description here", dmg: 75},
+        {name:"BLAST", description: "description here", dmg: 100},
+        {name:"FLAME", description: "description here", dmg: 100}
     ],
     },
     {image: "Lanto113.png",
+    name: "Word Smith",
     hp: 100,
     armor: 2,
     dodge: 10,
     speed: 5,
     resistance: 5,
     attacks: [
-        {name:"spell 7", description: "description here", dmg: 100},
-        {name:"spell 8", description: "description here", dmg: 200},
-        {name:"spell 9", description: "description here", dmg: 50}
+        {name:"CURE", description: "description here", dmg: 75},
+        {name:"HEAL", description: "description here", dmg: 75},
+        {name:"RESTORE", description: "description here", dmg: 200}
     ],
     }
 ]
