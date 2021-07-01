@@ -1,7 +1,7 @@
 //array of player characters
 export default [
     {image: "Lanto47.png",
-    name: "Alpha Mage",
+    name: "Wordsmith",
     hp: 100,
     armor: 2,
     dodge: 10,
@@ -11,7 +11,7 @@ export default [
         {name:"HIT", description: "description here", dmg: 50},
         {name:"CUT", description: "description here", dmg: 50},
         {name:"STAB", description: "description here", dmg: 100},
-        {name:"SLASH", description: "description here", dmg: 200}
+        {name:"SLASH", description: "description here", dmg: 150}
     ]
     },
     {image: "Lanto138.png",
@@ -25,10 +25,10 @@ export default [
         {name:"BURN", description: "description here", dmg: 75},
         {name:"BLAST", description: "description here", dmg: 100},
         {name:"FLAME", description: "description here", dmg: 100}
-    ],
+    ]
     },
     {image: "Lanto113.png",
-    name: "Word Smith",
+    name: "Medic",
     hp: 100,
     armor: 2,
     dodge: 10,
@@ -38,6 +38,6 @@ export default [
         {name:"CURE", description: "description here", dmg: 75},
         {name:"HEAL", description: "description here", dmg: 75},
         {name:"RESTORE", description: "description here", dmg: 200}
-    ],
+    ]
     }
 ]

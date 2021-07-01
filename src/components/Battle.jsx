@@ -8,6 +8,7 @@ function Battle(props) {
     let [selection, setSelection] = useState(0);
     let [attack, setAttack] = useState({});
     let [activePlayer, setActivePlayer] = useState(0);
+    let [letters, setLetters] = useState("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 
     let enemyArray = [
     {
@@ -48,7 +49,7 @@ function Battle(props) {
                     console.log("list selection:", selection);
                 };
                 if (dir === 'enter') {
-                    //save attack for late once target is selected
+                    //save attack for later once target is selected
                     setAttack(props.characters[activePlayer].attacks[selection]);
                     setSelection(0);
                     setState("SELECTTARGET");
