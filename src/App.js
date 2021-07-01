@@ -24,7 +24,7 @@ function App() {
       dodge: 10,
       speed: 5,
       resistance: 5,
-      attacks: ["spell 1", "spell 2", "spell 3"],
+      attacks: [{name:"spell 4", description: "description here", dmg: 100}, {name:"spell 5", description: "description here", dmg: 200}, {name:"spell 6", description: "description here", dmg: 50}],
   }
 
   let Mage3 = {
@@ -34,7 +34,7 @@ function App() {
       dodge: 10,
       speed: 5,
       resistance: 5,
-      attacks: ["spell 1", "spell 2", "spell 3"],
+      attacks: [{name:"spell 7", description: "description here", dmg: 100}, {name:"spell 8", description: "description here", dmg: 200}, {name:"spell 9", description: "description here", dmg: 50}],
   }
 
   return (

@@ -7,6 +7,7 @@ function Battle(props) {
     let [state, setState] = useState("SELECTACTION");
     let [selection, setSelection] = useState(0);
     let [attack, setAttack] = useState({});
+    let [activePlayer, setActivePlayer] = useState(0);
 
     let enemyArray = [
     {
@@ -28,8 +29,7 @@ function Battle(props) {
         speed: 6,
         resistance: 3,
         attacks: ["spell 1", "spell 2", "spell 3"],
-    }
-    ]
+    }];
 
     let [enemies, setEnemies] = useState(enemyArray);
 
@@ -40,7 +40,7 @@ function Battle(props) {
         if (state === "SELECTACTION") {
             if (dir === "down" || dir === "up" || dir === "enter") {
                 if (dir === 'down') {
-                    setSelection((selection + 1) > props.characters[0].attacks.length-1 ? props.characters[0].attacks.length-1 : selection + 1);
+                    setSelection((selection + 1) > props.characters[activePlayer].attacks.length-1 ? props.characters[activePlayer].attacks.length-1 : selection + 1);
                     console.log("list selection:", selection);
                 };
                 if (dir === 'up') {
@@ -49,7 +49,7 @@ function Battle(props) {
                 };
                 if (dir === 'enter') {
                     //save attack for late once target is selected
-                    setAttack(props.characters[0].attacks[selection]);
+                    setAttack(props.characters[activePlayer].attacks[selection]);
                     setSelection(0);
                     setState("SELECTTARGET");
                 };
@@ -74,6 +74,11 @@ function Battle(props) {
                     }
                     console.log("hp after", enemies[selection].hp);
                     setState("SELECTACTION");
+                    if ((activePlayer + 1) >= props.characters.length) {
+                        setActivePlayer(0);
+                    } else {
+                        setActivePlayer(activePlayer + 1);
+                    }
                     setSelection(0);
                 };
             }
@@ -83,7 +88,7 @@ function Battle(props) {
     function attacksMenu() {
         return (
         <>
-        {props.characters[0].attacks.map((attack, index)=>{
+        {props.characters[activePlayer].attacks.map((attack, index)=>{
             if (index === selection) {
                 return <>➤ {attack.name} {attack.description} {attack.dmg} Damage<br/></>
             } else {
@@ -102,24 +107,33 @@ function Battle(props) {
             backgroundSize: '100% 100%',
             zIndex: '-10'
         }} >
-            <img className="characterImage1" style={{
+            <div className="characterImage1">
+            {state === "SELECTACTION" && activePlayer === 0 && (<div>➤</div>)}
+            <img style={{
                 width: '33px',
                 height: '33px',
                 background: `url(${props.characters[0].image}) 0 -64px`,
                 zIndex: '1'
                 }} />
-            <img className="characterImage2" style={{
+            </div>
+            <div className="characterImage2">
+            {state === "SELECTACTION" && activePlayer === 1 && (<div>➤</div>)}
+            <img style={{
                 width: '33px',
                 height: '33px',
                 background: `url(${props.characters[1].image}) 0 -64px`,
                 zIndex: '1'
                 }} />
-            <img className="characterImage3" style={{
+            </div>
+            <div className="characterImage3">
+            {state === "SELECTACTION" && activePlayer === 2 && (<div>➤</div>)}
+            <img style={{
                 width: '33px',
                 height: '33px',
                 background: `url(${props.characters[2].image}) 0 -64px`,
                 zIndex: '1'
                 }} />
+            </div>
             <div className="enemy1" >
                 {selection === 0 && state === "SELECTTARGET" && (enemies[0].hp > 0) && (<div>➤</div>)}
                 {(enemies[0].hp > 0) && <img src={enemies[0].image} style={{
