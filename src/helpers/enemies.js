@@ -8,7 +8,7 @@ export default [
         dodge: 10,
         speed: 5,
         resistance: 5,
-        attacks: [{name: "slash", dmg: 20}, {name: "bite", dmg: 50}],
+        attacks: [{name: "slash", dmg: 40}, {name: "bite", dmg: 80}],
     },
     {
         name: "Oviraptor",
@@ -18,5 +18,5 @@ export default [
         dodge: 15,
         speed: 6,
         resistance: 3,
-        attacks: [{name: "slash", dmg: 20}, {name: "bite", dmg: 50}],
+        attacks: [{name: "slash", dmg: 40}, {name: "bite", dmg: 80}],
     }];
