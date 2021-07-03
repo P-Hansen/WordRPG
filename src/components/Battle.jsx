@@ -59,6 +59,32 @@ function Battle(props) {
                     setSelection(0);
                 };
             }
+            //controls for selecting healing target
+        } else if (state === "SELECTTARGET" && attack.dmg < 0) {
+            if (dir === "down" || dir === "up" || dir === "enter") {
+                if (dir === 'down') {
+                    setSelection((selection + 1) > props.characters.length-1 ? props.characters.length-1 : selection + 1);
+                    console.log("list selection:", selection);
+                };
+                if (dir === 'up') {
+                    setSelection((selection - 1) < 0 ? 0 : selection - 1);
+                    console.log("list selection:", selection);
+                };
+                if (dir === 'enter') {
+                    //deal dmg
+                    console.log("hp before", props.characters[selection].hp);
+                    props.characters[selection].hp -= attack.dmg;
+                    console.log("hp after", props.characters[selection].hp);
+                    setState("SELECTACTION");
+                    //switch to next player in the array
+                    if ((activePlayer + 1) >= props.characters.length) {
+                        setActivePlayer(0);
+                    } else {
+                        setActivePlayer(activePlayer + 1);
+                    }
+                    setSelection(0);
+                };
+            }
         }
     });
 
@@ -88,6 +114,7 @@ function Battle(props) {
         }} >
             <div className="characterImage1">
             {state === "SELECTACTION" && activePlayer === 0 && (<div>➤</div>)}
+            {state === "SELECTTARGET" && selection === 0 && (attack.dmg < 0) && (<div>➤</div>)}
             <img style={{
                 width: '33px',
                 height: '33px',
@@ -97,6 +124,7 @@ function Battle(props) {
             </div>
             <div className="characterImage2">
             {state === "SELECTACTION" && activePlayer === 1 && (<div>➤</div>)}
+            {state === "SELECTTARGET" && selection === 1 && (attack.dmg < 0) && (<div>➤</div>)}
             <img style={{
                 width: '33px',
                 height: '33px',
@@ -106,6 +134,7 @@ function Battle(props) {
             </div>
             <div className="characterImage3">
             {state === "SELECTACTION" && activePlayer === 2 && (<div>➤</div>)}
+            {state === "SELECTTARGET" && selection === 2 && (attack.dmg < 0) && (<div>➤</div>)}
             <img style={{
                 width: '33px',
                 height: '33px',
@@ -114,7 +143,7 @@ function Battle(props) {
                 }} />
             </div>
             <div className="enemy1" >
-                {selection === 0 && state === "SELECTTARGET" && (enemies[0].hp > 0) && (<div>➤</div>)}
+                {selection === 0 && state === "SELECTTARGET" && (enemies[0].hp > 0) && (attack.dmg > 0) && (<div>➤</div>)}
                 {(enemies[0].hp > 0) && <img src={enemies[0].image} style={{
                     width: '250px',
                     height: '250px',
@@ -122,7 +151,7 @@ function Battle(props) {
                     }} />}
             </div>
             <div className="enemy2" >
-                {selection === 1 && state === "SELECTTARGET" && (enemies[1].hp > 0) && (<div>➤</div>)}
+                {selection === 1 && state === "SELECTTARGET" && (enemies[1].hp > 0) && (attack.dmg > 0) && (<div>➤</div>)}
                 {(enemies[1].hp > 0) && <img src={enemies[1].image} style={{
                     width: '250px',
                     height: '250px',
