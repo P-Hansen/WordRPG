@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./Battle.scss";
 import useKeyPress from "../hooks/use-key-press";
 import enemyArray from "../helpers/enemies";
+import enemyTurn from "../helpers/enemyTurn";
 
 function Battle(props) {
 
@@ -53,6 +54,7 @@ function Battle(props) {
                     //switch to next player in the array
                     if ((activePlayer + 1) >= props.characters.length) {
                         setActivePlayer(0);
+                        enemyTurn(enemies, props.characters);
                     } else {
                         setActivePlayer(activePlayer + 1);
                     }
@@ -79,6 +81,7 @@ function Battle(props) {
                     //switch to next player in the array
                     if ((activePlayer + 1) >= props.characters.length) {
                         setActivePlayer(0);
+                        enemyTurn(enemies, props.characters);
                     } else {
                         setActivePlayer(activePlayer + 1);
                     }
