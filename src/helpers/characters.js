@@ -35,9 +35,9 @@ export default [
     speed: 5,
     resistance: 5,
     attacks: [
-        {name:"CURE", description: "description here", dmg: 75},
-        {name:"HEAL", description: "description here", dmg: 75},
-        {name:"RESTORE", description: "description here", dmg: 200}
+        {name:"CURE", description: "description here", dmg: -75},
+        {name:"HEAL", description: "description here", dmg: -75},
+        {name:"RESTORE", description: "description here", dmg: -200}
     ]
     }
 ]

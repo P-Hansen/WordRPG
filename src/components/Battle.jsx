@@ -34,7 +34,7 @@ function Battle(props) {
                 };
             }
         //controls for selecting target
-        } else if (state === "SELECTTARGET") {
+        } else if (state === "SELECTTARGET" && attack.dmg > 0) {
             if (dir === "down" || dir === "up" || dir === "enter") {
                 if (dir === 'down') {
                     setSelection((selection + 1) > enemyArray.length-1 ? enemyArray.length-1 : selection + 1);
@@ -133,7 +133,7 @@ function Battle(props) {
                 {state === "SELECTACTION" && (
                     attacksMenu()
                 )}
-                {state === "SELECTTARGET" && enemies && (
+                {state === "SELECTTARGET" && enemies && (attack.dmg > 0) && (
                     <div>
                         Name: {enemies[selection].name}<br/>
                         Hp: {enemies[selection].hp}<br/>
@@ -141,6 +141,16 @@ function Battle(props) {
                         Dodge: {enemies[selection].dodge}<br/>
                         Speed: {enemies[selection].speed}<br/>
                         Resistance: {enemies[selection].resistance}
+                    </div>
+                )}
+                {state === "SELECTTARGET" && enemies && (attack.dmg < 0) && (
+                    <div>
+                        Name: {props.characters[selection].name}<br/>
+                        Hp: {props.characters[selection].hp}<br/>
+                        Armor: {props.characters[selection].armor}<br/>
+                        Dodge: {props.characters[selection].dodge}<br/>
+                        Speed: {props.characters[selection].speed}<br/>
+                        Resistance: {props.characters[selection].resistance}
                     </div>
                 )}
             </div>
