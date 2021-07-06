@@ -151,21 +151,25 @@ function Battle(props) {
             </div>
             <div className="enemy1" >
                 {selection === 0 && state === "SELECTTARGET" && (enemies[0].hp > 0) && (attack.dmg > 0) && (<div>➤</div>)}
+                <div>
                 {(enemies[0].hp > 0) && <img src={enemies[0].image} style={{
                     width: '250px',
                     height: '250px',
                     zIndex: '1'
                     }} />}
-                    <HealthBar currentHp={enemies[0].hp} maxHp={enemies[0].maxHp} />
+                <HealthBar currentHp={enemies[0].hp} maxHp={enemies[0].maxHp} />
+                </div>
             </div>
             <div className="enemy2" >
                 {selection === 1 && state === "SELECTTARGET" && (enemies[1].hp > 0) && (attack.dmg > 0) && (<div>➤</div>)}
+                <div>
                 {(enemies[1].hp > 0) && <img src={enemies[1].image} style={{
                     width: '250px',
                     height: '250px',
                     zIndex: '1'
                     }} />}
-                    <HealthBar currentHp={enemies[1].hp} maxHp={enemies[1].maxHp} />
+                <HealthBar currentHp={enemies[1].hp} maxHp={enemies[1].maxHp} />
+                </div>
             </div>
             <div className="menuBox">
                 {state === "SELECTACTION" && (
