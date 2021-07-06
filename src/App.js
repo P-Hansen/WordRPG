@@ -3,6 +3,7 @@ import { useState } from "react";
 import Battle from './components/Battle.jsx';
 import Player from "./components/Player";
 import characters from './helpers/characters';
+import MapMaker from "./components/MapMaker";
 
 function App() {
 
@@ -12,7 +13,12 @@ function App() {
     <>
       <div className="zone-container">
       {state === "WORLD" && (
-       <Player skin="m2"/>
+       <Player skin="f1"/>
+      )}
+      </div>
+      <div>
+      {state === "EDIT" && (
+        <MapMaker />
       )}
       </div>
       <div>
