@@ -156,6 +156,7 @@ function Battle(props) {
                     height: '250px',
                     zIndex: '1'
                     }} />}
+                    <HealthBar currentHp={enemies[0].hp} maxHp={enemies[0].maxHp} />
             </div>
             <div className="enemy2" >
                 {selection === 1 && state === "SELECTTARGET" && (enemies[1].hp > 0) && (attack.dmg > 0) && (<div>➤</div>)}
@@ -164,6 +165,7 @@ function Battle(props) {
                     height: '250px',
                     zIndex: '1'
                     }} />}
+                    <HealthBar currentHp={enemies[1].hp} maxHp={enemies[1].maxHp} />
             </div>
             <div className="menuBox">
                 {state === "SELECTACTION" && (
