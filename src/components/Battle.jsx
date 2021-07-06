@@ -54,8 +54,8 @@ function Battle(props) {
                     setState("SELECTACTION");
                     //switch to next player in the array
                     if ((activePlayer + 1) >= props.characters.length) {
-                        setActivePlayer(0);
                         enemyTurn(enemies, props.characters);
+                        setActivePlayer(0);
                     } else {
                         setActivePlayer(activePlayer + 1);
                     }
@@ -81,8 +81,9 @@ function Battle(props) {
                     setState("SELECTACTION");
                     //switch to next player in the array
                     if ((activePlayer + 1) >= props.characters.length) {
-                        setActivePlayer(0);
+                        console.log("enemy turn");
                         enemyTurn(enemies, props.characters);
+                        setActivePlayer(0);
                     } else {
                         setActivePlayer(activePlayer + 1);
                     }
@@ -152,23 +153,23 @@ function Battle(props) {
             <div className="enemy1" >
                 {selection === 0 && state === "SELECTTARGET" && (enemies[0].hp > 0) && (attack.dmg > 0) && (<div>➤</div>)}
                 <div>
-                {(enemies[0].hp > 0) && <img src={enemies[0].image} style={{
-                    width: '250px',
-                    height: '250px',
-                    zIndex: '1'
+                    {(enemies[0].hp > 0) && <img src={enemies[0].image} style={{
+                        width: '250px',
+                        height: '250px',
+                        zIndex: '1'
                     }} />}
-                <HealthBar currentHp={enemies[0].hp} maxHp={enemies[0].maxHp} />
+                    <HealthBar currentHp={enemies[0].hp} maxHp={enemies[0].maxHp} />
                 </div>
             </div>
             <div className="enemy2" >
                 {selection === 1 && state === "SELECTTARGET" && (enemies[1].hp > 0) && (attack.dmg > 0) && (<div>➤</div>)}
                 <div>
-                {(enemies[1].hp > 0) && <img src={enemies[1].image} style={{
-                    width: '250px',
-                    height: '250px',
-                    zIndex: '1'
+                    {(enemies[1].hp > 0) && <img src={enemies[1].image} style={{
+                        width: '250px',
+                        height: '250px',
+                        zIndex: '1'
                     }} />}
-                <HealthBar currentHp={enemies[1].hp} maxHp={enemies[1].maxHp} />
+                    <HealthBar currentHp={enemies[1].hp} maxHp={enemies[1].maxHp} />
                 </div>
             </div>
             <div className="menuBox">
@@ -185,7 +186,7 @@ function Battle(props) {
                         Resistance: {enemies[selection].resistance}
                     </div>
                 )}
-                {state === "SELECTTARGET" && enemies && (attack.dmg < 0) && (
+                {state === "SELECTTARGET" && (attack.dmg < 0) && (
                     <div>
                         Name: {props.characters[selection].name}<br/>
                         Hp: {props.characters[selection].hp}<br/>
