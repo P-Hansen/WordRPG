@@ -3,6 +3,7 @@ import "./Battle.scss";
 import useKeyPress from "../hooks/use-key-press";
 import enemyArray from "../helpers/enemies";
 import enemyTurn from "../helpers/enemyTurn";
+import HealthBar from "./HealthBar";
 
 function Battle(props) {
 
@@ -124,6 +125,7 @@ function Battle(props) {
                 background: `url(${props.characters[0].image}) 0 -64px`,
                 zIndex: '1'
                 }} />
+                <HealthBar currentHp={props.characters[0].hp} maxHp={100} />
             </div>
             <div className="characterImage2">
             {state === "SELECTACTION" && activePlayer === 1 && (<div>➤</div>)}
@@ -134,6 +136,7 @@ function Battle(props) {
                 background: `url(${props.characters[1].image}) 0 -64px`,
                 zIndex: '1'
                 }} />
+                <HealthBar currentHp={props.characters[1].hp} maxHp={100} />
             </div>
             <div className="characterImage3">
             {state === "SELECTACTION" && activePlayer === 2 && (<div>➤</div>)}
@@ -144,6 +147,7 @@ function Battle(props) {
                 background: `url(${props.characters[2].image}) 0 -64px`,
                 zIndex: '1'
                 }} />
+                <HealthBar currentHp={props.characters[2].hp} maxHp={100} />
             </div>
             <div className="enemy1" >
                 {selection === 0 && state === "SELECTTARGET" && (enemies[0].hp > 0) && (attack.dmg > 0) && (<div>➤</div>)}

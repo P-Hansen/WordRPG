@@ -1,8 +1,11 @@
+import "./HealthBar.scss";
 
-function HealthBar() {
+function HealthBar(props) {
     return(
-        <div>
-        </div>
+        <>
+        <div className="bar" style={{width: props.currentHp }}/>
+        <div className="barBack" style={{width: props.maxHp-1 }}/>
+        </>
     )
 }
 
