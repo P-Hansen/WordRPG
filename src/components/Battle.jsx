@@ -118,9 +118,9 @@ function Battle(props) {
             zIndex: '-10'
         }} >
             <div className="characterImage1">
-            {state === "SELECTACTION" && activePlayer === 0 && (<div>➤</div>)}
-            {state === "SELECTTARGET" && selection === 0 && (attack.dmg < 0) && (<div>➤</div>)}
-            <img style={{
+                {state === "SELECTACTION" && activePlayer === 0 && (<div>➤</div>)}
+                {state === "SELECTTARGET" && selection === 0 && (attack.dmg < 0) && (<div>➤</div>)}
+                <img style={{
                 width: '33px',
                 height: '33px',
                 background: `url(${props.characters[0].image}) 0 -64px`,
@@ -129,9 +129,9 @@ function Battle(props) {
                 <HealthBar currentHp={props.characters[0].hp} maxHp={props.characters[0].maxHp} />
             </div>
             <div className="characterImage2">
-            {state === "SELECTACTION" && activePlayer === 1 && (<div>➤</div>)}
-            {state === "SELECTTARGET" && selection === 1 && (attack.dmg < 0) && (<div>➤</div>)}
-            <img style={{
+                {state === "SELECTACTION" && activePlayer === 1 && (<div>➤</div>)}
+                {state === "SELECTTARGET" && selection === 1 && (attack.dmg < 0) && (<div>➤</div>)}
+                <img style={{
                 width: '33px',
                 height: '33px',
                 background: `url(${props.characters[1].image}) 0 -64px`,
@@ -140,9 +140,9 @@ function Battle(props) {
                 <HealthBar currentHp={props.characters[1].hp} maxHp={props.characters[1].maxHp} />
             </div>
             <div className="characterImage3">
-            {state === "SELECTACTION" && activePlayer === 2 && (<div>➤</div>)}
-            {state === "SELECTTARGET" && selection === 2 && (attack.dmg < 0) && (<div>➤</div>)}
-            <img style={{
+                {state === "SELECTACTION" && activePlayer === 2 && (<div>➤</div>)}
+                {state === "SELECTTARGET" && selection === 2 && (attack.dmg < 0) && (<div>➤</div>)}
+                <img style={{
                 width: '33px',
                 height: '33px',
                 background: `url(${props.characters[2].image}) 0 -64px`,
