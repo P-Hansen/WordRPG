@@ -4,7 +4,7 @@ function HealthBar(props) {
 
     function max(num, max) {
         return (num > max) ? max : num;
-    }
+    };
 
     return(
         <>

@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import "./Battle.scss";
 import useKeyPress from "../hooks/use-key-press";
 import enemyArray from "../helpers/enemies";
 import enemyTurn from "../helpers/enemyTurn";
 import HealthBar from "./HealthBar";
+import { useState } from "react";
+import "./Battle.scss";
+import jQuery from "jquery";
 
 function Battle(props) {
-
     let [state, setState] = useState("SELECTACTION");
     let [selection, setSelection] = useState(0);
     let [attack, setAttack] = useState({});
