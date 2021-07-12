@@ -13,8 +13,11 @@ function Battle(props) {
     let [letters, setLetters] = useState(props.letters.letters);
     let [enemies, setEnemies] = useState(enemyArray);
 
-    // console.log(letters);
-    // console.log("how many A's", props.letters.howMany("A"));
+    console.log(props.letters.letters);
+    console.log("how many A's", props.letters.howMany("A"));
+    props.letters.add("A");
+    console.log(props.letters.letters);
+    console.log("how many A's", props.letters.howMany("A"));
 
     useKeyPress((event) => {
         event.preventDefault();
