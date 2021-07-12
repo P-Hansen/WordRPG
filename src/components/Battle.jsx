@@ -4,7 +4,6 @@ import enemyTurn from "../helpers/enemyTurn";
 import HealthBar from "./HealthBar";
 import { useState } from "react";
 import "./Battle.scss";
-import jQuery from "jquery";
 
 function Battle(props) {
     let [state, setState] = useState("SELECTACTION");
