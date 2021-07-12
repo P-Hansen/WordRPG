@@ -13,8 +13,8 @@ function Battle(props) {
     let [letters, setLetters] = useState(props.letters.letters);
     let [enemies, setEnemies] = useState(enemyArray);
 
-    console.log(letters);
-    console.log("how many A's", props.letters.howMany("A"));
+    // console.log(letters);
+    // console.log("how many A's", props.letters.howMany("A"));
 
     useKeyPress((event) => {
         event.preventDefault();
@@ -175,6 +175,11 @@ function Battle(props) {
                 </div>
             </div>
             <div className="menuBox">
+                {['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'].map((char)=>{
+                        return <p>{char}{props.letters.howMany(char)}</p>
+                    })
+                }
+                <br/>
                 {state === "SELECTACTION" && (
                     attacksMenu()
                 )}
