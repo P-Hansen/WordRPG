@@ -10,8 +10,10 @@ function Battle(props) {
     let [selection, setSelection] = useState(0);
     let [attack, setAttack] = useState({});
     let [activePlayer, setActivePlayer] = useState(0);
-    let [letters, setLetters] = useState("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    let [letters, setLetters] = useState(props.letters.letters);
     let [enemies, setEnemies] = useState(enemyArray);
+
+    console.log(letters);
 
     useKeyPress((event) => {
         event.preventDefault();
