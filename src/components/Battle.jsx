@@ -10,14 +10,14 @@ function Battle(props) {
     let [selection, setSelection] = useState(0);
     let [attack, setAttack] = useState({});
     let [activePlayer, setActivePlayer] = useState(0);
-    let [letters, setLetters] = useState(props.letters.letters);
+    // let [letters, setLetters] = useState(props.letters.letters);
     let [enemies, setEnemies] = useState(enemyArray);
 
-    console.log(props.letters.letters);
-    console.log("how many A's", props.letters.howMany("A"));
-    props.letters.subtract("A");
-    console.log(props.letters.letters);
-    console.log("how many A's", props.letters.howMany("A"));
+    // console.log(props.letters.letters);
+    // console.log("how many A's", props.letters.howMany("A"));
+    // props.letters.subtract("A");
+    // console.log(props.letters.letters);
+    // console.log("how many A's", props.letters.howMany("A"));
 
     useKeyPress((event) => {
         event.preventDefault();
@@ -102,7 +102,7 @@ function Battle(props) {
     function attacksMenu() {
         return (
         <>
-        {props.characters[activePlayer].name}<br/><br/>
+        {/* {props.characters[activePlayer].name}<br/><br/> */}
         {props.characters[activePlayer].attacks.map((attack, index)=>{
             if (index === selection) {
                 return <>➤ {attack.name} {attack.description} {attack.dmg} Damage<br/></>
@@ -178,10 +178,12 @@ function Battle(props) {
                 </div>
             </div>
             <div className="menuBox">
+                <div className="letters">
                 {['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'].map((char)=>{
                         return <p>{char}{props.letters.howMany(char)}</p>
                     })
                 }
+                </div>
                 <br/>
                 {state === "SELECTACTION" && (
                     attacksMenu()
