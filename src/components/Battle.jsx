@@ -14,6 +14,7 @@ function Battle(props) {
     let [enemies, setEnemies] = useState(enemyArray);
 
     console.log(letters);
+    console.log("how many A's", props.letters.howMany("A"));
 
     useKeyPress((event) => {
         event.preventDefault();
