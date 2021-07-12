@@ -15,7 +15,7 @@ function Battle(props) {
 
     console.log(props.letters.letters);
     console.log("how many A's", props.letters.howMany("A"));
-    props.letters.add("A");
+    props.letters.subtract("A");
     console.log(props.letters.letters);
     console.log("how many A's", props.letters.howMany("A"));
 

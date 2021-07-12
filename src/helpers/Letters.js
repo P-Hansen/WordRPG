@@ -6,5 +6,9 @@ export default {
     },
     add(letter) {
         this.letters += letter;
+    },
+    subtract(letter){
+        const index = this.letters.match(new RegExp(letter, 'd'));
+        this.letters = this.letters.replace(letter, '');
     }
 }
