@@ -56,6 +56,7 @@ function Battle(props) {
                     console.log("hp before", enemies[selection].hp);
                     enemies[selection].hp -= attack.dmg;
                     console.log(attack.name);
+                    //subtract letters of attack from alphabet
                     props.letters.subtract(attack.name);
                     console.log("hp after", enemies[selection].hp);
                     setState("SELECTACTION");
@@ -84,7 +85,9 @@ function Battle(props) {
                     //deal dmg
                     console.log("hp before", props.characters[selection].hp);
                     props.characters[selection].hp -= attack.dmg;
-                    console.log(attack.name);////////////////////////
+                    console.log(attack.name);
+                    //subtract letters of attack from alphabet
+                    props.letters.subtract(attack.name);
                     console.log("hp after", props.characters[selection].hp);
                     setState("SELECTACTION");
                     //switch to next player in the array
