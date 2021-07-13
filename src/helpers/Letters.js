@@ -8,10 +8,19 @@ export default {
         this.letters += letter;
     },
     subtract(word){
-        // const index = this.letters.match(new RegExp(letter, 'd'));
         let wordArray = word.split('');
         wordArray.map((letter)=>{
             this.letters = this.letters.replace(letter, '');
+        });
+    },
+    wordColour(word){
+        let wordArray = word.split('');
+        return wordArray.map((letter)=>{
+            if(this.howMany(letter) > 0) {
+                return <div className="gold">{letter}</div>
+            } else {
+                return <div className="grey">{letter}</div>
+            }
         });
     }
 }
