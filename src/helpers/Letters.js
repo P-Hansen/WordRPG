@@ -17,7 +17,7 @@ export default {
         let wordArray = word.split('');
         return wordArray.map((letter)=>{
             if(this.howMany(letter) > 0) {
-                return <div className="gold">{letter}</div>
+                return <div>{letter}</div>
             } else {
                 return <div className="grey">{letter}</div>
             }

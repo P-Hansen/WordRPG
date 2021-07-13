@@ -69,9 +69,13 @@
   .menuItem {
     display: flex;
     flex-direction: row;
-    .grey {
-      color: rgb(175, 175, 175);
-    }
+  }
+  .grey {
+    color: rgb(175, 175, 175);
+  }
+  .count {
+    font-size: 0.7em;
+    color: white;
   }
 }
 

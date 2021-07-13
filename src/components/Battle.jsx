@@ -186,7 +186,7 @@ function Battle(props) {
             <div className="menuBox">
                 <div className="letters">
                 {['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'].map((char)=>{
-                        return <p>{char}{props.letters.howMany(char)}</p>
+                        return <>{props.letters.wordColour(char)}<div className="count">{props.letters.howMany(char)}</div></>
                     })
                 }
                 </div>
