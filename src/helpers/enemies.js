@@ -3,6 +3,7 @@ export default [
     {
         name: "Oviraptor",
         image: "oviraptor.png",
+        loot: "OVIRAPTORLEGLEGARMARMTAILHEADCREST",
         hp: 200,
         maxHp: 200,
         armor: 2,
@@ -14,6 +15,7 @@ export default [
     {
         name: "Oviraptor",
         image: "oviraptor.png",
+        loot: "OVIRAPTORLEGLEGARMARMTAILHEADCREST",
         hp: 250,
         maxHp: 250,
         armor: 5,
