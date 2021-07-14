@@ -27,7 +27,7 @@ export default {
             }
         });
     },
-
+    //checks to see if all the letters of the word are available and returns true/false
     requirements(word) {
         let wordArray = word.split('');
         let flag = true;

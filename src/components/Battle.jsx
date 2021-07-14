@@ -22,13 +22,12 @@ function Battle(props) {
                 if (dir === 'down') {
                     setSelection((selection + 1) > props.characters[activePlayer].attacks.length-1 ? props.characters[activePlayer].attacks.length-1 : selection + 1);
                     console.log("list selection:", selection);
-                    // setRequirements(props.letters.requirements(props.characters[activePlayer].attacks[selection].name));
                 };
                 if (dir === 'up') {
                     setSelection((selection - 1) < 0 ? 0 : selection - 1);
                     console.log("list selection:", selection);
-                    // setRequirements(props.letters.requirements(props.characters[activePlayer].attacks[selection].name));
                 };
+                //check to see if the letters of the word are available
                 if (dir === 'enter' & props.letters.requirements(props.characters[activePlayer].attacks[selection].name)) {
                     //save attack for later once target is selected
                     setAttack(props.characters[activePlayer].attacks[selection]);
@@ -64,7 +63,6 @@ function Battle(props) {
                         setActivePlayer(activePlayer + 1);
                     }
                     setSelection(0);
-                    // setRequirements(props.letters.requirements(props.characters[activePlayer + 1].attacks[0].name));
                 };
             }
             //controls for selecting healing target
