@@ -10,14 +10,8 @@ function Battle(props) {
     let [selection, setSelection] = useState(0);
     let [attack, setAttack] = useState({});
     let [activePlayer, setActivePlayer] = useState(0);
-    // let [letters, setLetters] = useState(props.letters.letters);
     let [enemies, setEnemies] = useState(enemyArray);
-
-    // console.log(props.letters.letters);
-    // console.log("how many A's", props.letters.howMany("A"));
-    // props.letters.subtract("A");
-    // console.log(props.letters.letters);
-    // console.log("how many A's", props.letters.howMany("A"));
+    let [requirements, setRequirements] = useState(true);
 
     useKeyPress((event) => {
         event.preventDefault();
@@ -28,12 +22,14 @@ function Battle(props) {
                 if (dir === 'down') {
                     setSelection((selection + 1) > props.characters[activePlayer].attacks.length-1 ? props.characters[activePlayer].attacks.length-1 : selection + 1);
                     console.log("list selection:", selection);
+                    console.log(props.letters.requirements(props.characters[activePlayer].attacks[selection].name));
                 };
                 if (dir === 'up') {
                     setSelection((selection - 1) < 0 ? 0 : selection - 1);
                     console.log("list selection:", selection);
+                    console.log(props.letters.requirements(props.characters[activePlayer].attacks[selection].name));
                 };
-                if (dir === 'enter') {
+                if (dir === 'enter' & requirements === true) {
                     //save attack for later once target is selected
                     setAttack(props.characters[activePlayer].attacks[selection]);
                     setSelection(0);

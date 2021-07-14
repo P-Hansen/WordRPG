@@ -26,5 +26,18 @@ export default {
                 return <div className="grey">{letter}</div>
             }
         });
+    },
+
+    requirements(word) {
+        let wordArray = word.split('');
+        let flag = true;
+        wordArray.map((letter)=>{
+            if(this.howMany(letter) > 0) {
+                //true
+            } else {
+                flag = false;
+            }
+        });
+        return flag;
     }
 }
