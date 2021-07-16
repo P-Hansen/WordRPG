@@ -57,6 +57,7 @@ function Battle(props) {
                     //remove dead enemies
                     if (enemies[selection].hp <= 0) {
                         enemies.splice(selection, 1);
+                        //add letters from enemy killed
                         props.letters.add(enemies[selection].loot);
                     }
                     setState("SELECTACTION");
