@@ -54,8 +54,10 @@ function Battle(props) {
                     //subtract letters of attack from alphabet
                     props.letters.subtract(attack.name);
                     console.log("hp after", enemies[selection].hp);
+                    //remove dead enemies
                     if (enemies[selection].hp <= 0) {
                         enemies.splice(selection, 1);
+                        props.letters.add(enemies[selection].loot);
                     }
                     setState("SELECTACTION");
                     //switch to next player in the array
