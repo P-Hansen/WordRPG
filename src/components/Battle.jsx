@@ -59,8 +59,13 @@ function Battle(props) {
                         //add letters from enemy killed
                         props.letters.add(enemies[selection].loot);
                         enemies.splice(selection, 1);
+                        if (enemies.length === 0) {
+                            console.log("Victory!")
+                            setState("VICTORY");
+                        }
+                    } else {
+                        setState("SELECTACTION");
                     }
-                    setState("SELECTACTION");
                     //switch to next player in the array
                     if ((activePlayer + 1) >= props.characters.length) {
                         enemyTurn(enemies, props.characters);
@@ -105,6 +110,7 @@ function Battle(props) {
             }
             //pass
         } else if (state === "SELECTTARGET" && attack.dmg === 0) {
+            setState("SELECTACTION");
             //switch to next player in the array
             if ((activePlayer + 1) >= props.characters.length) {
                 console.log("enemy turn");
@@ -115,14 +121,13 @@ function Battle(props) {
             }
             setSelection(0);
             setRequirements(props.letters.requirements(props.characters[0].attacks[0].name));
-            setState("SELECTACTION");
         };
     });
 
     //show a list of the active players attacks and an arrow in front of the currently selected one
     function attacksMenu() {
         return (
-        <>
+        <div>
         {/* {props.characters[activePlayer].name}<br/><br/> */}
         {props.characters[activePlayer].attacks.map((attack, index)=>{
             if (index === selection) {
@@ -131,7 +136,7 @@ function Battle(props) {
                 return <div className="menuItem">{props.letters.wordColour(attack.name)} {attack.description} {attack.dmg} Damage<br/></div>
             }
         })}
-        </>
+        </div>
         )
     };
 
@@ -143,6 +148,7 @@ function Battle(props) {
             backgroundSize: '100% 100%',
             zIndex: '-10'
         }} >
+            {state === "VICTORY" && <div className="victory">Victory!</div>}
             <div className="characterImage1">
                 {state === "SELECTACTION" && activePlayer === 0 && (<div>➤</div>)}
                 {state === "SELECTTARGET" && selection === 0 && (attack.dmg < 0) && (<div>➤</div>)}

@@ -79,6 +79,14 @@
   }
 }
 
+.victory {
+  position: absolute;
+  top: 30%;
+  right: 15%;
+  font-size: 8em;
+  z-index: 5;
+}
+
 img:hover {
   animation: shake 0.5s;
   animation-iteration-count: 1;
