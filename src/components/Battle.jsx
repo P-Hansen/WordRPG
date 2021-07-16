@@ -103,7 +103,20 @@ function Battle(props) {
                     setRequirements(props.letters.requirements(props.characters[0].attacks[0].name));
                 };
             }
-        }
+            //pass
+        } else if (state === "SELECTTARGET" && attack.dmg === 0) {
+            //switch to next player in the array
+            if ((activePlayer + 1) >= props.characters.length) {
+                console.log("enemy turn");
+                enemyTurn(enemies, props.characters);
+                setActivePlayer(0);
+            } else {
+                setActivePlayer(activePlayer + 1);
+            }
+            setSelection(0);
+            setRequirements(props.letters.requirements(props.characters[0].attacks[0].name));
+            setState("SELECTACTION");
+        };
     });
 
     //show a list of the active players attacks and an arrow in front of the currently selected one
