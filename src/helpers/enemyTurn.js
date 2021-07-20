@@ -1,5 +1,3 @@
-import $ from "jquery";
-
 //iterates through enemy array and preform a random attack on a random target
 function enemyTurn(enemyArray, playerArray, playerElement) {
     enemyArray.map((enemy) => {
