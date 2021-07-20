@@ -13,19 +13,19 @@ function App() {
   return (
     <>
       <div className="zone-container">
-      {state === "WORLD" && (
-       <Player skin="f1"/>
-      )}
+          {state === "WORLD" && (
+          <Player skin="f1"/>
+          )}
       </div>
       <div>
-      {state === "EDIT" && (
-        <MapMaker />
-      )}
+          {state === "EDIT" && (
+            <MapMaker />
+          )}
       </div>
       <div>
-      {state === "BATTLE" && (
-        <Battle characters={characters} letters={letters} />
-      )}
+          {state === "BATTLE" && (
+            <Battle characters={characters} letters={letters} />
+          )}
       </div>
     </>
   );
