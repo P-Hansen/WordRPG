@@ -10,7 +10,8 @@ function Battle(props) {
     let [selection, setSelection] = useState(0);
     let [attack, setAttack] = useState({});
     let [activePlayer, setActivePlayer] = useState(0);
-    let [enemies, setEnemies] = useState(enemyArray);
+    let pick = Math.floor(Math.random()*enemyArray.length);
+    let [enemies, setEnemies0] = useState(enemyArray.slice(pick, pick+1));
     let [requirements, setRequirements] = useState(true);
 
     useKeyPress((event) => {
