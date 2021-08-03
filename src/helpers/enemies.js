@@ -26,7 +26,7 @@ export default [
     },
     {
         name: "Archaeopteryx",
-        image: "oviraptor.png",
+        image: "archaeopteryx.png",
         loot: "ARCHAEOPTERYXHEADWINGWINGLEGLEG",
         hp: 250,
         maxHp: 250,
@@ -38,7 +38,7 @@ export default [
     },
     {
         name: "Brachiosaurus",
-        image: "oviraptor.png",
+        image: "brachiosaurus.png",
         loot: "BRACHIOSAURUSBRACHIOSAURUSLEGLEGLEGLEG",
         hp: 800,
         maxHp: 800,
@@ -50,7 +50,7 @@ export default [
     },
     {
         name: "Dimetrodon",
-        image: "oviraptor.png",
+        image: "demitro.png",
         loot: "DIMETRODONHEADLEGLEGLEGLEGSPINESAIL",
         hp: 350,
         maxHp: 350,
@@ -59,5 +59,17 @@ export default [
         speed: 6,
         resistance: 5,
         attacks: [{name: "Bite", dmg: 20}, {name: "tail smash", dmg: 30}],
+    },
+    {
+        name: "Necknomingia",
+        image: "necknomingia.png",
+        loot: "NECKNOMINGIAHEADARMARMLEGLEG",
+        hp: 200,
+        maxHp: 200,
+        armor: 2,
+        dodge: 20,
+        speed: 8,
+        resistance: 5,
+        attacks: [{name: "slash", dmg: 20}, {name: "peck", dmg: 30}],
     },
 ];
