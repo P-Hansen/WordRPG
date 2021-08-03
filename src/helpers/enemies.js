@@ -22,7 +22,7 @@ export default [
         dodge: 0,
         speed: 4,
         resistance: 10,
-        attacks: [{name: "Bash", dmg: 20}, {name: "Bludgeon", dmg: 30}],
+        attacks: [{name: "tail smash", dmg: 20}, {name: "Bludgeon", dmg: 30}],
     },
     {
         name: "Archaeopteryx",
@@ -47,5 +47,17 @@ export default [
         speed: 2,
         resistance: 20,
         attacks: [{name: "Stomp", dmg: 30}, {name: "tail smash", dmg: 40}],
+    },
+    {
+        name: "Dimetrodon",
+        image: "oviraptor.png",
+        loot: "DIMETRODONHEADLEGLEGLEGLEGSPINESAIL",
+        hp: 350,
+        maxHp: 350,
+        armor: 2,
+        dodge: 15,
+        speed: 6,
+        resistance: 5,
+        attacks: [{name: "Bite", dmg: 20}, {name: "tail smash", dmg: 30}],
     },
 ];
