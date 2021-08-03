@@ -23,4 +23,17 @@ export default [
         speed: 4,
         resistance: 10,
         attacks: [{name: "Bash", dmg: 20}, {name: "Bludgeon", dmg: 30}],
-    }];
+    },
+    {
+        name: "Archaeopteryx",
+        image: "oviraptor.png",
+        loot: "ARCHAEOPTERYXHEADWINGWINGLEGLEG",
+        hp: 250,
+        maxHp: 200,
+        armor: 2,
+        dodge: 20,
+        speed: 7,
+        resistance: 5,
+        attacks: [{name: "slash", dmg: 20}, {name: "peck", dmg: 30}],
+    },
+];
