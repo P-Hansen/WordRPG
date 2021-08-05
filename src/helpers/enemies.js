@@ -108,4 +108,16 @@ export default [
         resistance: 5,
         attacks: [{name: "Bite", dmg: 40}, {name: "Stomp", dmg: 30}],
     },
+    {
+        name: "Troodon Rex",
+        image: "troodon.png",
+        loot: "TROODONHEADARMARMLEGLEG",
+        hp: 300,
+        maxHp: 300,
+        armor: 5,
+        dodge: 10,
+        speed: 6,
+        resistance: 5,
+        attacks: [{name: "Bite", dmg: 40}, {name: "slash", dmg: 30}],
+    },
 ];
