@@ -84,4 +84,16 @@ export default [
         resistance: 5,
         attacks: [{name: "Head butt", dmg: 40}, {name: "charge", dmg: 30}],
     },
+    {
+        name: "Stegosaurus",
+        image: "stego.png",
+        loot: "STEGOSAURUSLEGLEGLEGLEGPLATES",
+        hp: 300,
+        maxHp: 300,
+        armor: 5,
+        dodge: 10,
+        speed: 6,
+        resistance: 5,
+        attacks: [{name: "tail swipe", dmg: 40}, {name: "bash", dmg: 30}],
+    },
 ];
