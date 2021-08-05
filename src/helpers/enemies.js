@@ -72,4 +72,16 @@ export default [
         resistance: 5,
         attacks: [{name: "slash", dmg: 20}, {name: "peck", dmg: 30}],
     },
+    {
+        name: "Pachycephalosaurus",
+        image: "Pachycephalosaurus.png",
+        loot: "PACHYCEPHALOSAURUSARMARMLEGLEGLEGLEG",
+        hp: 300,
+        maxHp: 300,
+        armor: 5,
+        dodge: 10,
+        speed: 6,
+        resistance: 5,
+        attacks: [{name: "Head butt", dmg: 40}, {name: "charge", dmg: 30}],
+    },
 ];
