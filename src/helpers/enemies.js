@@ -96,4 +96,16 @@ export default [
         resistance: 5,
         attacks: [{name: "tail swipe", dmg: 40}, {name: "bash", dmg: 30}],
     },
+    {
+        name: "Tyrannosaurus Rex",
+        image: "T-rex.png",
+        loot: "TYRANNOSAURUSREXHEADMOUTHMOUTHARMARMLEGLEG",
+        hp: 300,
+        maxHp: 300,
+        armor: 5,
+        dodge: 10,
+        speed: 6,
+        resistance: 5,
+        attacks: [{name: "Bite", dmg: 40}, {name: "Stomp", dmg: 30}],
+    },
 ];
