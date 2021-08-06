@@ -3,13 +3,16 @@ import "./HealthBar.scss";
 function HealthBar(props) {
 
     function max(num, max) {
-        return (num > max) ? max : num;
+        let percent = (num / max) * 100;
+        return percent;
+        // return (num > max) ? max : num;
     };
 
     return(
         <>
         <div className="bar" style={{ width: max(props.currentHp, props.maxHp) }}/>
-        <div className="barBack" style={{ width: props.maxHp-1 }}/>
+        <div className="barBack" style={{ width: 100 }}/>
+        <div className="barText" >{props.currentHp}/{props.maxHp}</div>
         </>
     )
 }
