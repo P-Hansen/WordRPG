@@ -45,7 +45,7 @@ function Battle(props) {
         } else if (state === "SELECTTARGET" && attack.dmg > 0) {
             if (dir === "down" || dir === "up" || dir === "enter") {
                 if (dir === 'down') {
-                    setSelection((selection + 1) > enemyArray.length-1 ? enemyArray.length-1 : selection + 1);
+                    setSelection((selection + 1) > enemies.length-1 ? enemies.length-1 : selection + 1);
                     console.log("list selection:", selection);
                 };
                 if (dir === 'up') {
