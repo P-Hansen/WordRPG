@@ -196,7 +196,7 @@ function Battle(props) {
                         height: '250px',
                         zIndex: '1'
                     }} />}
-                    {(enemies[0]) && <HealthBar currentHp={enemies[0].hp} maxHp={enemies[0].maxHp} />}
+                    {(enemies[0]) && <HealthBar currentHp={enemies[0].hp} maxHp={enemies[0].maxHp} name={enemies[0].name} />}
                 </div>
             </div>
             <div className="enemy2" >
@@ -207,7 +207,7 @@ function Battle(props) {
                         height: '250px',
                         zIndex: '1'
                     }} />}
-                    {(enemies[1]) && <HealthBar currentHp={enemies[1].hp} maxHp={enemies[1].maxHp} />}
+                    {(enemies[1]) && <HealthBar currentHp={enemies[1].hp} maxHp={enemies[1].maxHp} name={enemies[0].name} />}
                 </div>
             </div>
             <div className="menuBox">

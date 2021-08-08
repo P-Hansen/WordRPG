@@ -10,6 +10,7 @@ function HealthBar(props) {
 
     return(
         <>
+        <div>{props.name}</div>
         <div className="bar" style={{ width: max(props.currentHp, props.maxHp) }}/>
         <div className="barBack" style={{ width: 100 }}/>
         <div className="barText" >{props.currentHp}/{props.maxHp}</div>
