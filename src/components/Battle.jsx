@@ -137,9 +137,9 @@ function Battle(props) {
         {/* {props.characters[activePlayer].name}<br/><br/> */}
         {props.characters[activePlayer].attacks.map((attack, index)=>{
             if (index === selection) {
-                return <div className="menuItem">➤{props.letters.wordColour(attack.name)} {attack.description} {attack.dmg} Damage<br/></div>
+                return <div className="menuItem" >➤&nbsp;{props.letters.wordColour(attack.name)}&nbsp;{attack.description} {attack.dmg} Damage<br/></div>
             } else {
-                return <div className="menuItem">{props.letters.wordColour(attack.name)} {attack.description} {attack.dmg} Damage<br/></div>
+                return <div className="menuItem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{props.letters.wordColour(attack.name)}&nbsp;{attack.description} {attack.dmg} Damage<br/></div>
             }
         })}
         </div>
